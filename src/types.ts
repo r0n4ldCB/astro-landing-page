@@ -26,3 +26,11 @@ export interface ShowcaseSite {
   image: ImageMetadata;
   url: string;
 }
+
+export interface Heroes {
+  name: string;
+  img: string;
+  color: string;
+  text: string;
+  desc: string;
+}

@@ -1,0 +1,139 @@
+---
+import { Icon } from "astro-icon";
+import "@fontsource/inter/variable.css";
+import "~/styles/index.css";
+import type { Heroes } from "~/types";
+
+
+const characters : Array<Heroes> = [
+        { name: "Ant-Man", img: "./b12edb92.png", color: "IndianRed", text: "white", desc: "\"I do some dumb things, and the people I love the most...they pay the price.\"" },
+        { name: "Black Widow",  img: "./8926a781.png", color: "SlateGrey", text: "white", desc: "\"After everything that happened with S.H.I.E.L.D., during my little hiatus, I went back to Russia and tried to find my parents. Two little graves linked by a chain fence. I pulled some weeds and left some flowers. We have what we have when we have it.\"" },
+        { name: "Captain America",  img: "./14bd1ec1.png", color: "RoyalBlue", text: "white", desc: "\"I'm not looking for forgiveness. And I'm way past asking for permission. Earth just lost their best defender. So we're here to fight. If you wanna stay in our way... we'll fight you, too.\"" },
+        { name: "Director Fury",  img: "./af5d762a.png", color: "Sienna", text: "white", desc: "\"Back in the day, I had eyes everywhere, ears everywhere else. Here we all are, back on earth, with nothing but our wit, and our will to save the world. So stand. Outwit the platinum bastard.\"" },
+        { name: "Hawkeye",  img: "./c9616a0d.png", color: "MediumOrchid", text: "white", desc: "\"Just can't seem to miss.\"" },
+        { name: "Iron Man",  img: "./fcc6cb21.png", color: "LightCoral", text: "black", desc: "\"My armor was never a distraction or a hobby. It was a cocoon. And now I'm a changed man. You can take away my house, all my tricks and toys. But one thing you can't take away... I am Iron Man.\"" },
+        { name: "Loki",  img: "./7b54165b.png", color: "LightGreen", text: "black", desc: "\"I, Loki, Prince of Asgard, Odinson, the rightful King of Jotunheim, God of Mischief, do hereby pledge to you, my undying fidelity.\"" },
+        { name: "Thor",  img: "./2e19984b.png", color: "SkyBlue", text: "black", desc: "\"You know I’m 1500 years old. I’ve killed twice as many enemies as that. And every one of them would have rather killed me than not succeeded. I’m only alive because fate wants me alive. Thanos is just the latest of a long line of bastards, and he’ll be the latest to feel my vengeance. Fate wills it so.\"" },
+        { name: "War Machine",  img: "./c9e85eb7.png", color: "LightGrey", text: "black", desc: "\"138 combat missions. That's how many I've flown, Tony. Every one of them could've been my last, but I flew 'em. Because the fight needed to be fought.\"" }
+      ];
+
+      //const recorrer = characters.map((character) => {character});
+
+---
+<section>
+
+        <div class="bg-cyan-800">
+          <ul>
+            {
+              characters.map(({name, img, color, desc})=>
+              <li><span class="text-lime-500">{name}</span></li>
+              <li><span class="text-red-500">{color}</span></li>
+              <li><span class="text-yellow-500">{desc}</span></li>
+              <li><span class="text-purple-500">{img}</span></li>
+              )
+            }
+          </ul>
+          <ul> <span class="text-red-400">Colores</span> {characters.map((pro2)=><li>{pro2.color}</li>)}</ul>
+        </div>
+    
+       <div class="grid h-screen pt-4 pr-6 pl-6 pb-4">
+            <div class="bg-orange-100">
+                <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">boton</button>
+            </div><!-- logo seccion  al 50%-->
+            <div class="bg-blue-500">
+                <p>La ciberseguridad se refiere a la protección de sistemas, dispositivos y redes informáticas contra el acceso no autorizado, el robo de datos, la manipulación de información y otros tipos de amenazas cibernéticas. La ciberseguridad incluye una serie de medidas y prácticas diseñadas para proteger la información y los activos digitales de individuos, empresas y organizaciones de todo tipo.
+                </p>
+            </div><!--div seccion informativa 50% -->
+            <div class="bg-amber-500">
+
+                <div class="col-sm-12 table-responsive">
+                    <table class="table table-condensed">
+                        <tr>
+                            <ul class="flex border-b">
+                                <li class="-mb-px mr-1">
+                                  <a class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-700 font-semibold" href="#">Active</a>
+                                </li>
+                                <li class="mr-1">
+                                  <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold" href="#">Tab</a>
+                                </li>
+                                <li class="mr-1">
+                                  <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold" href="#">Tab</a>
+                                </li>
+                                <li class="mr-1">
+                                  <a class="bg-white inline-block py-2 px-4 text-gray-400 font-semibold" href="#">Tab</a>
+                                </li>
+                              </ul>
+                        </tr>
+                    </table>
+                </div>
+                
+                <p>Es importante saber sobre ciberseguridad porque en la actualidad la tecnología y el internet están presentes en la mayoría de los aspectos de nuestras vidas y esto ha llevado a un aumento significativo de los riesgos cibernéticos. La ciberdelincuencia, el robo de identidad, la pérdida de datos y otros tipos de amenazas cibernéticas pueden tener consecuencias graves, tanto para individuos como para empresas y organizaciones.
+                </p>
+            </div><!-- div acordion -->
+            
+            <div class="bg-indigo-100">
+                <form class="w-full max-w-sm">
+                    <div class="flex items-center border-b border-teal-500 py-2">
+                      <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Busqueda">
+                      <button class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="button">
+                        Sign Up
+                      </button>
+                      <button class="flex-shrink-0 border-transparent border-4 text-teal-500 hover:text-teal-800 text-sm py-1 px-2 rounded" type="button">
+                        Cancel
+                      </button>
+                    </div>
+                  </form>
+                <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">busqueda</button>
+            </div><!-- div search -->
+            
+            <div class="flex">
+                <div class="max-w-sm w-full lg:max-w-full lg:flex">
+                    <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('../src/assets/astronaut.png')" title="Woman holding a mug">
+                    </div>
+                    <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                    <div class="mb-8">
+                        <p class="text-sm text-gray-600 flex items-center">
+                        <Icon pack="mdi" name="rocket" class="h-8" />
+                        Members only 
+                        </p>
+                        <div class="text-gray-900 font-bold text-xl mb-2">Can coffee make you a better developer?</div>
+                        <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
+                    </div>
+                    <div class="flex items-center">
+                        <img class="w-10 h-10 rounded-full mr-4" src="../src/assets/astronaut.png" alt="Avatar of Jonathan Reinink">
+                        <div class="text-sm">
+                        <p class="text-gray-900 leading-none">Jonathan Reinink</p>
+                        <p class="text-gray-600">Aug 18</p>
+                        </div>
+                    </div>
+                    </div>
+                </div><!-- div paneles -->
+                <div class="max-w-sm w-full lg:max-w-full lg:flex">
+                    <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('../src/assets/astronaut.png')" title="Woman holding a mug">
+                    </div>
+                    <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                    <div class="mb-8">
+                        <p class="text-sm text-gray-600 flex items-center">
+                            <Icon pack="mdi" name="rocket" class="h-8" />
+                            Members only
+                        </p>
+                        <div class="text-gray-900 font-bold text-xl mb-2">Can coffee make you a better developer?</div>
+                        <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
+                    </div>
+                    <div class="flex items-center">
+                        <img class="w-10 h-10 rounded-full mr-4" src="../src/assets/astronaut.png" alt="Avatar of Jonathan Reinink">
+                        <div class="text-sm">
+                        <p class="text-gray-900 leading-none">Jonathan Reinink</p>
+                        <p class="text-gray-600">Aug 18</p>
+                        </div>
+                    </div>
+                    </div>
+                </div><!-- div paneles -->
+            </div>
+
+            <div class="bg-red-500">
+                <p></p>En términos generales, cualquier persona que use dispositivos conectados a internet o redes informáticas está expuesta a riesgos cibernéticos. Sin embargo, hay algunos grupos de personas que pueden ser más vulnerables a estos riesgos. 
+            </p>
+            </div><!-- panel al lado del arcodion -->
+       </div><!-- div prinvipal -->
+</section>
